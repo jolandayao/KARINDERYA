@@ -1,5 +1,30 @@
 export const categories = ['Ulam', 'Soup', 'Rice', 'Drinks', 'Snacks'];
 
+export const foodImageOptions = [
+  { name: 'Bulad', path: '/images/Bulad.jpg' },
+  { name: 'Ginamos', path: '/images/ginamos.jpg' },
+  { name: 'Iced Tea', path: '/images/ice tea.jpg' },
+  { name: 'Karne', path: '/images/karne.jpg' },
+  { name: 'Rice', path: '/images/RICE.jpg' },
+  { name: 'Tinapa', path: '/images/tinapa.jpg' },
+  { name: 'Uyap', path: '/images/Uyap.jpg' },
+];
+
+const defaultFoodImages = {
+  ginamos: '/images/ginamos.jpg',
+  bulad: '/images/Bulad.jpg',
+  uyap: '/images/Uyap.jpg',
+  tinapa: '/images/tinapa.jpg',
+  rice: '/images/RICE.jpg',
+  'iced tea': '/images/ice tea.jpg',
+  'eut nga isda': '/images/karne.jpg',
+  karne: '/images/karne.jpg',
+};
+
+export function getFoodImage(food) {
+  return food.image || defaultFoodImages[food.name.trim().toLowerCase()] || '';
+}
+
 export const initialFoods = [
   { id: 1, name: 'Ginamos', category: 'Ulam', price: 20, available: true, image: '/images/ginamos.jpg' },
   { id: 2, name: 'Bulad', category: 'Ulam', price: 25, available: true, image: '/images/Bulad.jpg' },

@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { categories } from '../data/myDATA'
+import { categories, foodImageOptions, getFoodImage } from '../data/myDATA'
 import { useRestaurant } from '../context/RestaurantContext'
 
 const emptyForm = { name: '', category: 'Ulam', price: '', available: true, image: '' }
@@ -73,10 +73,11 @@ function FoodMenu() {
   });
 
   const showImage = (food) => {
-    if (food.image) {
+    const image = getFoodImage(food);
+    if (image) {
       return (
         <img
-          src={food.image}
+          src={image}
           alt={food.name}
           className="w-10 h-10 object-cover rounded-lg"
         />
@@ -221,15 +222,30 @@ function FoodMenu() {
             />
 
             <label className="label">
-              <span className="label-text">Image URL (optional)</span>
+              <span className="label-text">Choose a food image</span>
             </label>
-            <input
-              type="text"
-              className="input input-bordered w-full mb-3"
-              value={form.image}
-              onChange={(e) => setForm({ ...form, image: e.target.value })}
-              placeholder="Enter image URL"
-            />
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-4">
+              {foodImageOptions.map((option) => (
+                <button
+                  key={option.path}
+                  type="button"
+                  onClick={() => setForm({ ...form, image: option.path })}
+                  aria-pressed={form.image === option.path}
+                  aria-label={`Choose ${option.name} image`}
+                  className={`rounded-lg border-2 p-2 text-left transition-colors ${form.image === option.path ? 'border-primary bg-primary/10' : 'border-base-300 hover:border-primary/50'}`}
+                >
+                  <img src={option.path} alt="" className="w-full h-20 object-cover rounded-md" />
+                  <span className="block text-sm mt-1">{option.name}</span>
+                </button>
+              ))}
+            </div>
+            <button
+              type="button"
+              className="btn btn-sm btn-ghost mb-3"
+              onClick={() => setForm({ ...form, image: '' })}
+            >
+              Clear image selection
+            </button>
 
             <div className="modal-action">
               <button className="btn btn-ghost" onClick={() => setShowForm(false)}>Cancel</button>

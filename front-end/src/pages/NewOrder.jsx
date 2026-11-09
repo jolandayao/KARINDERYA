@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useRestaurant } from '../context/RestaurantContext'
+import { getFoodImage } from '../data/myDATA'
 
 function NewOrder() {
   const navigate = useNavigate()
@@ -69,7 +70,7 @@ function NewOrder() {
             <div className="divide-y divide-base-300">
               {availableFoods.map((food) => (
                 <div key={food.id} className="py-3 flex flex-wrap items-center gap-3">
-                  {food.image && <img src={food.image} alt="" className="w-12 h-12 rounded-lg object-cover" />}
+                  {getFoodImage(food) && <img src={getFoodImage(food)} alt={food.name} className="w-12 h-12 rounded-lg object-cover" />}
                   <div className="flex-1 min-w-32">
                     <p className="font-semibold">{food.name}</p>
                     <p className="text-sm text-brand-gray">{food.category} · {settings.currency}{Number(food.price).toFixed(2)}</p>
