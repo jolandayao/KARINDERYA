@@ -104,7 +104,7 @@ function FoodMenu() {
         <div className="p-4 flex flex-wrap items-center justify-between gap-3">
           <div>
             <h3 className="font-bold text-lg">Food Items</h3>
-            <p className="text-xs text-brand-gray">{foods.length} items in your menu.</p>
+            <p className="text-xs text-brand-gray">{foods.length} items is in your menu.</p>
           </div>
 
           <div className="flex gap-2">
