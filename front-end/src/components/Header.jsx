@@ -1,5 +1,6 @@
 import { useLocation } from 'react-router-dom'
 import { useState, useEffect } from 'react'
+import { assetUrl } from '../data/myDATA'
 
 const pageInfo = {
   '/': {
@@ -35,7 +36,7 @@ function Header() {
   const [admin, setAdmin] = useState({
     name: 'Flora Admin',
     role: 'Administrator',
-    avatar: '/images/flora tiindahan.png',
+    avatar: assetUrl('images/flora tiindahan.png'),
   })
 
   useEffect(() => {
@@ -47,7 +48,9 @@ function Header() {
           setAdmin({
             name: parsed.adminName || 'Flora Admin',
             role: parsed.adminRole || 'Administrator',
-            avatar: parsed.adminAvatar || '/images/flora tiindahan.png',
+            avatar: parsed.adminAvatar?.startsWith('/images/')
+              ? assetUrl(parsed.adminAvatar)
+              : parsed.adminAvatar || assetUrl('images/flora tiindahan.png'),
           })
         } catch {}
       }

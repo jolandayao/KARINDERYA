@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom'
 import { useRestaurant } from '../context/RestaurantContext'
+import { assetUrl } from '../data/myDATA'
 
 
 const links = [
@@ -24,7 +25,7 @@ function Sidebar() {
     <aside className="w-64 min-h-full flex flex-col bg-neutral text-neutral-content px-4 py-6">
       <div className="flex items-center gap-3 px-2 mb-8">
         <div className="w-10 h-10 rounded-lg bg-primary overflow-hidden flex items-center justify-center text-xl font-bold">
-          <img src="/images/flora tiindahan.png" alt="FloraEatery Logo" className="w-full h-full object-cover" />
+          <img src={assetUrl('images/flora tiindahan.png')} alt="FloraEatery Logo" className="w-full h-full object-cover" />
         </div>
         <div>
           <h1 className="text-lg font-bold leading-tight">FloraEatery</h1>
