@@ -1,7 +1,5 @@
-// Mga kategorya ng pagkain
 export const categories = ['Ulam', 'Sabaw', 'Gulay', 'Extras', 'Drinks']
 
-// Sample na listahan ng pagkain
 export const initialFoods = [
   { id: 1, name: 'Ginamos', category: 'Ulam', price: 20, available: true, image: '' },
   { id: 2, name: 'Bulad', category: 'Ulam', price: 25, available: true, image: '' },
@@ -12,8 +10,6 @@ export const initialFoods = [
   { id: 7, name: 'Iced Tea', category: 'Drinks', price: 25, available: true, image: '' },
 ]
 
-// Sample na orders (para may laman ang Dashboard)
-// Ang bawat item ay kumokopya ng pangalan at presyo ng pagkain sa oras ng order
 export const initialOrders = [
   {
     id: 'FE-1001',

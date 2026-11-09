@@ -1,7 +1,6 @@
 import { useLocation } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 
-// Title and subtitle para sa mga page
 const pageInfo = {
   '/': {
     title: 'Dashboard',
@@ -36,7 +35,7 @@ function Header() {
   const [admin, setAdmin] = useState({
     name: 'Flora Admin',
     role: 'Administrator',
-    avatar: '/images/flora tiindahan.png', // dore ang lgo natu bai  huh 
+    avatar: '/images/flora tiindahan.png',
   })
 
   useEffect(() => {

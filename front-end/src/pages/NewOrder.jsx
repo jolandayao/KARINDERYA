@@ -31,7 +31,6 @@ function NewOrder() {
       return
     }
 
-    // oxlint-disable-next-line react/purity -- Generate the timestamp only after the user submits the order.
     const now = new Date()
     const order = {
       id: `FE-${now.getTime()}`,

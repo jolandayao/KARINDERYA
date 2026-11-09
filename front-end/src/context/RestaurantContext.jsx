@@ -33,7 +33,6 @@ function readArray(key, fallback) {
   }
 }
 
-// Use an object copy so updating settings never changes the shared defaults.
 function readSettings() {
   try {
     const savedValue = localStorage.getItem(STORAGE_KEYS.settings)
@@ -110,7 +109,6 @@ export function RestaurantProvider({ children }) {
   )
 }
 
-// oxlint-disable-next-line react/only-export-components -- This module keeps the provider and its context hook together.
 export function useRestaurant() {
   const context = useContext(RestaurantContext)
 

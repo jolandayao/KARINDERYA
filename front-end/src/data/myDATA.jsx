@@ -9,6 +9,4 @@ export const initialFoods = [
   { id: 7, name: 'Iced Tea', category: 'Drinks', price: 25, available: true, image: '/images/ice tea.jpg' },
 ];
 
-// Sample na orders (para may laman ang Dashboard)
-// Ang bawat item ay kumokopya ng pangalan at presyo ng pagkain sa oras ng order
 export const initialOrders = [];

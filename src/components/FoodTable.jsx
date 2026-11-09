@@ -1,4 +1,3 @@
-// Listahan ng pagkain: table sa malaking screen, cards sa maliit na screen
 function FoodImage({ food }) {
   if (food.image) {
     return <img src={food.image} alt={food.name} className="w-10 h-10 object-cover rounded-lg shrink-0" />
@@ -26,7 +25,6 @@ function FoodTable({ foods, onEdit, onDelete, onToggle }) {
 
   return (
     <>
-      {/* Mobile: cards */}
       <div className="md:hidden divide-y divide-base-300">
         {foods.map((food) => (
           <div key={food.id} className="p-4 flex flex-col gap-3">
@@ -54,7 +52,6 @@ function FoodTable({ foods, onEdit, onDelete, onToggle }) {
         ))}
       </div>
 
-      {/* Tablet at laptop: table */}
       <div className="hidden md:block overflow-x-auto">
         <table className="table table-sm">
           <thead>

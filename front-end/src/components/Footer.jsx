@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { useRestaurant } from '../context/RestaurantContext'
 
-// link sa footer gikan sa daisy ui: https://daisyui.com/components/footer/
+// link  sa daisy ui    bahhaah: https://daisyui.com/components/footer/
 function Footer() {
   const { settings } = useRestaurant()
 

@@ -1,6 +1,5 @@
 import { categories } from '../data/myDATA'
 
-// Add / Edit form sa loob ng modal
 function FoodFormModal({ title, form, setForm, onSave, onCancel }) {
   return (
     <div className="modal modal-open modal-bottom sm:modal-middle">

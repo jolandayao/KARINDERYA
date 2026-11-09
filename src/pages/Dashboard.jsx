@@ -5,7 +5,6 @@ import StatusBadge from '../components/StatusBadge'
 function Dashboard() {
   const { orders } = useRestaurant()
 
-  // ---------- STATISTICS ----------
   const paidOrders = orders.filter((order) => order.paymentStatus === 'Paid')
   let totalSales = 0
   for (const order of paidOrders) {
@@ -16,8 +15,6 @@ function Dashboard() {
   const pendingOrders = orders.filter((order) => order.status === 'Pending').length
   const completedOrders = orders.filter((order) => order.status === 'Completed').length
 
-  // ---------- RECENT ORDERS ----------
-  // Pinakabago muna, 5 lang. Kinopya muna ang array bago i-sort.
   const recentOrders = [...orders]
     .sort((a, b) => new Date(b.date) - new Date(a.date))
     .slice(0, 5)

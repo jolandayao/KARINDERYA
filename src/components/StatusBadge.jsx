@@ -1,4 +1,3 @@
-// Kulay ng badge para sa bawat status
 const badgeColors = {
   Pending: 'badge-warning',
   Preparing: 'badge-info',

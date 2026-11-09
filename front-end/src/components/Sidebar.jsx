@@ -15,7 +15,6 @@ function Sidebar() {
   const { settings } = useRestaurant()
   const isOpen = settings.isOpen !== false
 
-  // Closes the sidebar on small screens after clicking a link
   const closeSidebar = () => {
     const toggle = document.getElementById('sidebar-drawer')
     if (toggle) toggle.checked = false
@@ -23,7 +22,6 @@ function Sidebar() {
 
   return (
     <aside className="w-64 min-h-full flex flex-col bg-neutral text-neutral-content px-4 py-6">
-      {/* Logo */}
       <div className="flex items-center gap-3 px-2 mb-8">
         <div className="w-10 h-10 rounded-lg bg-primary overflow-hidden flex items-center justify-center text-xl font-bold">
           <img src="/images/flora tiindahan.png" alt="FloraEatery Logo" className="w-full h-full object-cover" />
@@ -36,12 +34,10 @@ function Sidebar() {
         </div>
       </div>
 
-      {/* Section label */}
       <p className="px-2 mb-3 text-[11px] font-semibold tracking-widest text-gray-500">
         WORKSPACE
       </p>
 
-      {/* Navigation */}
       <nav className="flex flex-col gap-1">
         {links.map((link) => (
           <NavLink
@@ -58,7 +54,6 @@ function Sidebar() {
           >
             {({ isActive }) => (
               <>
-                {/* Filled dot when active, hollow dot when not */}
                 <span
                   className={
                     'w-2 h-2 rounded-full border ' +
@@ -74,7 +69,6 @@ function Sidebar() {
         ))}
       </nav>
 
-      {/* Footer (stays at the bottom) */}
       <div className="mt-auto pt-4 border-t border-gray-800 flex items-center gap-3 px-2">
         <div className="w-10 h-10 rounded-full border-2 border-primary text-primary flex items-center justify-center text-xs font-bold">
           FE

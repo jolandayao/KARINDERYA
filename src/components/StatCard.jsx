@@ -1,4 +1,3 @@
-// Isang summary card. Props: title, value, note
 function StatCard({ title, value, note }) {
   return (
     <div className="card bg-white border border-base-300">

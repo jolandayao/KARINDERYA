@@ -73,7 +73,6 @@ body {
   min-width: 0;
 }
 
-/* Keep page content and form controls usable on narrow screens. */
 main {
   min-width: 0;
   width: 100%;
